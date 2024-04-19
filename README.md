@@ -26,12 +26,15 @@ Have been tested for windows and linux systems with no problem. Running on a lin
 Installation not successful in macos with M1 chip, due to a dependency of the CelliD package (https://github.com/LTLA/scuttle/issues/14#issuecomment-989653173). Will keep testing and update when this is solved. (9/17: please check Update section #2)
 
 ```
-# First, install dependencies: Seurat, CelliD, dnet, supraHex, Rgraphviz, infotheo, anticlust, multimode, philentropy; then:
+# First, install dependencies: Seurat, CelliD, supraHex, Rgraphviz, infotheo, anticlust, multimode, philentropy; then:
 
 # install.packages("remotes")
 
 #Turn off warning-error-conversion, because the tiniest warning stops installation
 Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")
+
+# Install an archived version of `dnet`
+devtools::install_version("dnet", version = "1.1.7", repos = "http://cran.us.r-project.org")
 
 #install from github
 remotes::install_github("https://github.com/qingnanl/gsdensity")
